@@ -4,29 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Glossar – health-app</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; color: #1a1a1a; }
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.1rem; margin-top: 2.5rem; padding-bottom: 0.3rem; border-bottom: 1px solid #e5e5e5; }
-  dt { font-weight: 600; margin-top: 1.1rem; }
-  dd { margin: 0.2rem 0 0; color: #333; }
-  dd .unit { color: #666; }
-  footer { margin-top: 3rem; font-size: 0.85rem; color: #666; }
-  a { color: #0057FF; }
-  .logo { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 1rem; display: block; }
-  .intro { color: #444; }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="logo.png" alt="health-app Logo" class="logo">
-  <h1>Glossar</h1>
-  <p class="intro">
-    Kurze Erklärungen zu den Fachbegriffen, die in der App unter Blutdruck,
-    Gewicht, Sport, Erholung und CPAP-Nächte auftauchen.
-  </p>
+<div class="seite">
+  <header class="kopf">
+    <img src="logo.png" alt="health-app Logo">
+    <div>
+      <p class="kicker">health-app</p>
+      <h1>Glossar</h1>
+    </div>
+  </header>
 
-  <h2>Blutdruck</h2>
-  <dl>
+  <p class="lead">Kurze Erklärungen zu den Fachbegriffen, die in der App unter Blutdruck,
+    Gewicht, Sport, Erholung und CPAP-Nächte auftauchen.</p>
+
+  <section class="card">
+    <h2>Blutdruck</h2>
+    <dl>
     <dt>Systolisch / Diastolisch</dt>
     <dd>Der obere (systolische) Wert misst den Druck beim Herzschlag, der
       untere (diastolische) den Druck in der Entspannungsphase dazwischen.
@@ -41,9 +37,11 @@
     <dd>Herzschläge pro Minute (<span class="unit">bpm</span>) zum Zeitpunkt
       der Blutdruckmessung.</dd>
   </dl>
+  </section>
 
-  <h2>Gewicht &amp; Körperzusammensetzung</h2>
-  <dl>
+  <section class="card">
+    <h2>Gewicht &amp; Körperzusammensetzung</h2>
+    <dl>
     <dt>BMI (Body-Mass-Index)</dt>
     <dd>Gewicht in kg geteilt durch die Körpergröße in Metern zum Quadrat -
       ein grober Anhaltspunkt, der Muskelmasse nicht von Körperfett
@@ -74,9 +72,11 @@
       deutet auf einen niedrigeren Grundumsatz als bei Gleichaltrigen üblich
       hin.</dd>
   </dl>
+  </section>
 
-  <h2>Sport</h2>
-  <dl>
+  <section class="card">
+    <h2>Sport</h2>
+    <dl>
     <dt>Aktivitätstypen</dt>
     <dd>Aus Strava übernommene Kategorien: Run (Laufen), Ride (Radfahren),
       Walk (Gehen), Hike (Wandern), WeightTraining (Krafttraining), Workout
@@ -90,9 +90,11 @@
     <dd>Durchschnittliche bzw. höchste Herzfrequenz während einer Aktivität,
       in <span class="unit">bpm</span> (beats per minute).</dd>
   </dl>
+  </section>
 
-  <h2>Erholung (Recovery)</h2>
-  <dl>
+  <section class="card">
+    <h2>Erholung (Recovery)</h2>
+    <dl>
     <dt>Ruhepuls (Resting Heart Rate)</dt>
     <dd>Herzfrequenz in vollständiger Ruhe, meist im Schlaf gemessen. Ein
       niedrigerer Ruhepuls als sonst üblich deutet auf gute Erholung hin, ein
@@ -126,9 +128,11 @@
       eigenen, fertigen Score nicht über die Schnittstelle frei, deshalb die
       eigene Berechnung.</dd>
   </dl>
+  </section>
 
-  <h2>Ernährung</h2>
-  <dl>
+  <section class="card">
+    <h2>Ernährung</h2>
+    <dl>
     <dt>Makronährstoffe</dt>
     <dd>Die drei Hauptbestandteile der Nahrung, die Energie liefern:
       Kohlenhydrate, Eiweiß (Protein) und Fett - jeweils in Gramm erfasst.</dd>
@@ -143,9 +147,11 @@
       hoher Natriumanteil in der Ernährung wird u.&nbsp;a. mit erhöhtem
       Blutdruck in Verbindung gebracht.</dd>
   </dl>
+  </section>
 
-  <h2>CPAP-Nächte (Schlafapnoe-Therapie)</h2>
-  <dl>
+  <section class="card">
+    <h2>CPAP-Nächte (Schlafapnoe-Therapie)</h2>
+    <dl>
     <dt>CPAP</dt>
     <dd>Continuous Positive Airway Pressure - Beatmungsgerät, das die Atemwege
       während des Schlafs mit leichtem Überdruck offenhält, um Atemaussetzer
@@ -174,9 +180,11 @@
     <dd>Der vom Gerät erzeugte, konstante Beatmungsdruck, in
       <span class="unit">cmH₂O</span> (Zentimeter Wassersäule).</dd>
   </dl>
+  </section>
 
-  <h2>Blutwerte (Gesundheitscheck)</h2>
-  <dl>
+  <section class="card">
+    <h2>Blutwerte (Gesundheitscheck)</h2>
+    <dl>
     <dt>GGT (Gamma-GT)</dt>
     <dd>Leberenzym, das bei Zellschäden vermehrt ins Blut abgegeben wird.
       Einflussgrößen: Alkoholkonsum, Medikamente, Ernährung.</dd>
@@ -221,7 +229,9 @@
     <dd>Verhältnis von "schlechtem" zu "gutem" Cholesterin - aussagekräftiger
       für das kardiovaskuläre Risiko als die Einzelwerte allein.</dd>
   </dl>
+  </section>
 
   <footer><a href="index.html">Zurück zur Startseite</a></footer>
+</div>
 </body>
 </html>

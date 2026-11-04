@@ -1,0 +1,207 @@
+/* Oberfläche der health-app, auf diese drei Seiten übertragen.
+   Die Token sind aus webapp/static/style.css des Projekts übernommen (dort wiederum von
+   android/.../ui/Color.kt), damit die öffentlichen Seiten und die App nicht auseinander-
+   laufen. Wer eine Farbe ändert, ändert sie dort zuerst.
+
+   Kein Theme-Umschalter auf diesen Seiten: Es gibt nichts zu bedienen, also richtet sich
+   der Modus allein nach dem System. */
+:root {
+  --bg: #f7f9fc;
+  --card: #e1e9f4;
+  --card-weich: #f1f5fa;
+  --text: #101520;
+  --text-secondary: #4b5768;
+  --accent: #0062cc;
+  --hairline: #d8dfe9;
+  /* Eigener Ton für die Linie AUF einer Karte. Nicht --hairline: der ist für Kanten auf
+     dem Seitengrund gedacht und kommt auf der Kartenfläche auf 1,10:1 (hell) bzw.
+     1,01:1 (dunkel) - im dunklen Modus also unsichtbar, und die Überschrift stand mit
+     einer Lücke da, für die es keinen sichtbaren Grund gab. Derselbe Fall wie bei den
+     leeren Heatmap-Plätzen in Android. Reine Dekoration, deshalb keine WCAG-Schwelle:
+     gewählt auf rund 1,5:1 gegen die Karte, sichtbar ohne zu trennen. */
+  --card-linie: #b0bfd2;
+  --pill-bg: #d6e7ff;
+  --pill-text: #002a52;
+  --radius: 16px;
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #06090f;
+    --card: #172338;
+    --card-weich: #0d1522;
+    --text: #eef2f8;
+    --text-secondary: #9fAABC;
+    --accent: #4fa3ff;
+    --hairline: #18243a;
+    --card-linie: #2f3d56;
+    --pill-bg: #0e3a68;
+    --pill-text: #cfe5ff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.seite {
+  max-width: 680px;
+  /* 16 px Rand auch auf dem schmalsten Gerät - die Kacheln sollen nicht am Rahmen kleben. */
+  margin: 0 auto;
+  padding: 40px 16px 64px;
+}
+
+/* Kopf: Logo, Wortmarke, darüber eine gesperrte Versalzeile, die sagt, auf welcher
+   Seite man ist. Dieselbe Rolle wie die Bereichsüberschrift in der App. */
+.kopf {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.kopf img {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  flex: none;
+  display: block;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 0 0 2px;
+}
+
+.wortmarke {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+/* Fließtextkachel: ruhigerer Grund als die Abschnittskacheln, damit die Startseite
+   nicht wie eine Liste gleichwertiger Blöcke aussieht. */
+.card-weich {
+  background: var(--card-weich);
+}
+
+.card h2 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--card-linie);
+}
+
+.card > p:first-child,
+.card > dl:first-child { margin-top: 0; }
+.card > p:last-child,
+.card > dl:last-child { margin-bottom: 0; }
+
+p { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+
+.lead {
+  font-size: 17px;
+  color: var(--text);
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0 0 20px;
+}
+
+dl { margin: 0; }
+
+dt {
+  font-weight: 600;
+  margin-top: 16px;
+}
+dt:first-of-type { margin-top: 0; }
+
+dd {
+  margin: 2px 0 0;
+  color: var(--text-secondary);
+}
+
+/* Einheiten im Fließtext einer Definition. Mono, weil es Zahlenwerk ist, und eine
+   Spur kleiner - aber nicht blasser: dd ist schon die ruhigere Farbe, noch ein
+   Schritt zurück fiele unter die 4,5:1 für Text. */
+.unit {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+a { color: var(--accent); }
+
+.pillreihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+}
+
+.pill {
+  display: inline-block;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.pill:hover { text-decoration: underline; }
+
+a:focus-visible,
+.pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--hairline);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+footer a { color: var(--accent); }

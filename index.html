@@ -4,29 +4,38 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>health-app</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; color: #1a1a1a; }
-  h1 { font-size: 1.6rem; }
-  footer { margin-top: 3rem; font-size: 0.85rem; color: #666; }
-  a { color: #0057FF; }
-  .logo { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 1rem; display: block; }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="logo.png" alt="health-app Logo" class="logo">
-  <h1>health-app</h1>
-  <p>
-    health-app ist ein privates, persönliches Werkzeug zur Zusammenführung
-    eigener Gesundheitsdaten (z.&nbsp;B. Trainingsaktivitäten, Schlaftherapie-
-    Werte und manuell erfasste Messwerte) aus mehreren Quellen in eine
-    private Datenbank.
-  </p>
-  <p>
-    Es handelt sich um kein öffentliches Produkt und hat keine externen
-    Nutzer:innen — es wird ausschließlich von der Entwicklerin/dem
-    Entwickler selbst für die eigene Datenauswertung verwendet.
-  </p>
-  <p><a href="privacy.html">Datenschutzerklärung</a> · <a href="glossar.html">Glossar</a></p>
+<div class="seite">
+  <header class="kopf">
+    <img src="logo.png" alt="health-app Logo">
+    <div>
+      <p class="kicker">Privates Werkzeug</p>
+      <h1>health-app</h1>
+    </div>
+  </header>
+
+  <div class="card card-weich">
+    <p class="lead">
+      health-app ist ein privates, persönliches Werkzeug zur Zusammenführung
+      eigener Gesundheitsdaten (z.&nbsp;B. Trainingsaktivitäten, Schlaftherapie-
+      Werte und manuell erfasste Messwerte) aus mehreren Quellen in eine
+      private Datenbank.
+    </p>
+    <p>
+      Es handelt sich um kein öffentliches Produkt und hat keine externen
+      Nutzer:innen — es wird ausschließlich von der Entwicklerin/dem
+      Entwickler selbst für die eigene Datenauswertung verwendet.
+    </p>
+    <nav class="pillreihe">
+      <a class="pill" href="privacy.html">Datenschutzerklärung</a>
+      <a class="pill" href="glossar.html">Glossar</a>
+    </nav>
+  </div>
+
   <footer>Kontakt: siehe GitHub-Profil des Repository-Inhabers.</footer>
+</div>
 </body>
 </html>
